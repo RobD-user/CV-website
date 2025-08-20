@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Robert Devries Chief Information Officer</title>
+  <meta charset="UTF-8" />
+  <title>Robert Devries — Chief Information Officer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: sans-serif;
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #004578;
+      color: white;
+      padding: 1.5rem;
       text-align: center;
-      margin: 40px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    p.subtitle {
+      margin: 0.25rem 0 0;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
     }
     iframe {
-      width: 80%;
-      height: 600px;
+      width: 100%;
+      max-width: 900px;
+      height: 80vh;
       border: 1px solid #ccc;
-      margin-bottom: 20px;
+      background: white;
+      margin-bottom: 1rem;
     }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
+    a.button {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      background: #004578;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    a.button:hover {
+      background: #0063a6;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      padding: 1rem;
     }
   </style>
 </head>
 <body>
-  <h1>Rob's CV</h1>
-  <p>View my CV below, or download it for later:</p>
+  <header>
+    <h1>Rob's CV</h1>
+    <p class="subtitle">Chief Information Officer</p>
+  </header>
 
-  <!-- Embedded PDF -->
-  <iframe src="Robert Devries Resume Marketing.pdf"></iframe>
+  <main>
+    <!-- Embedded PDF -->
+    <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
 
-  <!-- Download Button -->
-  <p>
-    <a href="Robert Devries Resume Marketing.pdf" download>
-      <button>Download CV</button>
+    <!-- Download Button -->
+    <a href="Robert-Devries-Resume-Marketing.pdf" download class="button">
+      📄 Download CV
     </a>
-  </p>
+  </main>
+
+  <footer>
+    &copy; 2025 Robert Devries
+  </footer>
 </body>
 </html>
