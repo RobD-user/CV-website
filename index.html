@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Robert Devries CV</title>
+  <title>Robert Devries CV — Color Preview</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -10,15 +10,16 @@
       font-family: system-ui, sans-serif;
       background: #f9f9f9;
       color: #222;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    }
+    section {
+      margin-bottom: 3rem;
+      border-bottom: 2px dashed #ccc;
+      padding-bottom: 2rem;
     }
     header {
-      background: #004578;
-      color: white;
       padding: 1.5rem;
       text-align: center;
+      color: #003366;
     }
     h1 {
       margin: 0;
@@ -30,7 +31,6 @@
       font-weight: 300;
     }
     main {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,37 +39,25 @@
     .viewer {
       width: 100%;
       max-width: 900px;
-      position: relative;
       background: white;
       border: 1px solid #ccc;
     }
-    /* Floating download button above viewer */
     .download-btn {
-      position: sticky; /* stays near top as you scroll past header */
-      top: 0.5rem;       /* offset from top after header */
+      position: sticky;
+      top: 0.5rem;
       align-self: flex-end;
       margin-bottom: 0.5rem;
-      background: rgba(0, 128, 255, 0.85); /* softer light blue with transparency */
-      color: white;
+      color: #003366;
       padding: 0.5rem 0.9rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       font-size: 0.9rem;
-      z-index: 1000;
       transition: background 0.2s ease, opacity 0.5s ease;
-      opacity: 0;
-    }
-    /* Fade-in visible state */
-    .download-btn.visible {
-      opacity: 1;
-    }
-    .download-btn:hover {
-      background: rgba(0, 128, 255, 1);
     }
     iframe {
       width: 100%;
-      height: 80vh;
+      height: 50vh;
       border: none;
     }
     footer {
@@ -78,44 +66,75 @@
       color: #666;
       padding: 1rem;
     }
-    /* Responsive tweak for small screens */
-    @media (max-width: 500px) {
-      .download-btn {
-        top: 0.4rem;
-        padding: 0.4rem 0.7rem;
-        font-size: 0.85rem;
-      }
+
+    /* Color variations */
+    .soft-sky header, .soft-sky .download-btn {
+      background: rgba(162, 207, 254, 0.9);
+    }
+    .soft-sky .download-btn:hover {
+      background: rgba(162, 207, 254, 1);
+    }
+
+    .misty-blue header, .misty-blue .download-btn {
+      background: rgba(181, 216, 255, 0.9);
+    }
+    .misty-blue .download-btn:hover {
+      background: rgba(181, 216, 255, 1);
+    }
+
+    .frosted-azure header, .frosted-azure .download-btn {
+      background: rgba(143, 198, 255, 0.9);
+    }
+    .frosted-azure .download-btn:hover {
+      background: rgba(143, 198, 255, 1);
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Robert Devries CV</h1>
-    <p class="subtitle">Chief Information Officer</p>
-  </header>
+  <!-- Option 1 -->
+  <section class="soft-sky">
+    <header>
+      <h1>Robert Devries CV — Soft Sky</h1>
+      <p class="subtitle">Chief Information Officer</p>
+    </header>
+    <main>
+      <a href="Robert-Devries-Resume-Marketing.pdf" download class="download-btn">📄 Download</a>
+      <div class="viewer">
+        <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
+      </div>
+    </main>
+  </section>
 
-  <main>
-    <!-- Download button above viewer -->
-    <a href="Robert-Devries-Resume-Marketing.pdf" download class="download-btn">📄 Download</a>
+  <!-- Option 2 -->
+  <section class="misty-blue">
+    <header>
+      <h1>Robert Devries CV — Misty Blue</h1>
+      <p class="subtitle">Chief Information Officer</p>
+    </header>
+    <main>
+      <a href="Robert-Devries-Resume-Marketing.pdf" download class="download-btn">📄 Download</a>
+      <div class="viewer">
+        <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
+      </div>
+    </main>
+  </section>
 
-    <div class="viewer">
-      <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
-    </div>
-  </main>
+  <!-- Option 3 -->
+  <section class="frosted-azure">
+    <header>
+      <h1>Robert Devries CV — Frosted Azure</h1>
+      <p class="subtitle">Chief Information Officer</p>
+    </header>
+    <main>
+      <a href="Robert-Devries-Resume-Marketing.pdf" download class="download-btn">📄 Download</a>
+      <div class="viewer">
+        <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
+      </div>
+    </main>
+  </section>
 
   <footer>
     &copy; 2025 Robert Devries
   </footer>
-
-  <script>
-    // Simple fade-in when button scrolls into view
-    const btn = document.querySelector('.download-btn');
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        btn.classList.add('visible');
-      }
-    }, { threshold: 0.1 });
-    observer.observe(btn);
-  </script>
 </body>
 </html>
