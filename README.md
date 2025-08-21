@@ -1,2 +1,2 @@
 # CV-website
-Aplace to host my CV
+A place to host my CV and let people download it
