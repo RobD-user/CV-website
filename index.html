@@ -43,8 +43,9 @@
       background: white;
       border: 1px solid #ccc;
     }
+    /* Fixed download button */
     .download-btn {
-      position: absolute;
+      position: fixed;
       top: 10px;
       right: 10px;
       background: #004578;
@@ -54,6 +55,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 0.9rem;
+      z-index: 1000;
       transition: background 0.2s ease;
     }
     .download-btn:hover {
@@ -70,6 +72,15 @@
       color: #666;
       padding: 1rem;
     }
+    /* Responsive tweak for small screens */
+    @media (max-width: 500px) {
+      .download-btn {
+        top: 8px;
+        right: 8px;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -79,9 +90,10 @@
   </header>
 
   <main>
+    <!-- Download button outside the PDF viewer -->
+    <a href="Robert-Devries-Resume-Marketing.pdf" download class="download-btn">📄 Download</a>
+
     <div class="viewer">
-      <!-- Download Button in upper right -->
-      <a href="Robert-Devries-Resume-Marketing.pdf" download class="download-btn">📄 Download</a>
       <!-- Embedded PDF -->
       <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
     </div>
