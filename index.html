@@ -36,26 +36,33 @@
       align-items: center;
       padding: 1.5rem;
     }
-    iframe {
+    .viewer {
       width: 100%;
       max-width: 900px;
-      height: 80vh;
-      border: 1px solid #ccc;
+      position: relative;
       background: white;
-      margin-bottom: 1rem;
+      border: 1px solid #ccc;
     }
-    a.button {
-      display: inline-block;
-      padding: 0.75rem 1.25rem;
+    .download-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
       background: #004578;
       color: white;
-      text-decoration: none;
+      padding: 0.5rem 0.9rem;
       border-radius: 6px;
+      text-decoration: none;
       font-weight: bold;
+      font-size: 0.9rem;
       transition: background 0.2s ease;
     }
-    a.button:hover {
+    .download-btn:hover {
       background: #0063a6;
+    }
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
     }
     footer {
       text-align: center;
@@ -67,18 +74,17 @@
 </head>
 <body>
   <header>
-    <h1>Robert Devries CV Please view and Download</h1>
+    <h1>Rob's CV</h1>
     <p class="subtitle">Chief Information Officer</p>
   </header>
 
   <main>
-    <!-- Embedded PDF -->
-    <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
-
-    <!-- Download Button -->
-    <a href="Robert-Devries-Resume-Marketing.pdf" download class="button">
-      📄 Download CV
-    </a>
+    <div class="viewer">
+      <!-- Download Button in upper right -->
+      <a href="Robert-Devries-Resume-Marketing.pdf" download class="download-btn">📄 Download</a>
+      <!-- Embedded PDF -->
+      <iframe src="Robert-Devries-Resume-Marketing.pdf"></iframe>
+    </div>
   </main>
 
   <footer>
